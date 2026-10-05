@@ -1,0 +1,4 @@
+- [ ] Update `libs.versions.toml` to include `kotlin` version and `kotlin-android` plugin
+- [ ] Update root `build.gradle.kts` to include `kotlin-android` plugin
+- [ ] Update `app/build.gradle.kts` to include `kotlin-android` plugin
+- [ ] Perform Gradle Sync to verify the fix
