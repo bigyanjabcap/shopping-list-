@@ -283,9 +283,12 @@ private fun EmptyInventoryContent(modifier: Modifier = Modifier,
                 )
             }
         }
+        println("this is contained in my second commit")
     }
 
 
+
+//first commit
 
 /*
 @Preview(showBackground = true, showSystemUi = true)
