@@ -15,10 +15,14 @@ interface ItemDao {
 
     @Update
     suspend fun update(item: Item)
-
+/*
     @Delete
     suspend fun delete(item: Item)
 
+
+ */
+@Query("DELETE FROM items WHERE id IN (:ids)")
+suspend fun deleteByIds(ids: List<Int>)
     @Query("SELECT * from items WHERE name = :name")
     fun getItem(name: String): Flow<Item>
 
