@@ -283,11 +283,11 @@ private fun EmptyInventoryContent(modifier: Modifier = Modifier,
                 )
             }
         }
-        println("this is contained in my second commit"
-            jknkjnk
+        println("this is contained in my second commit")
+        this is the error
     }
 
-
+//HELLO
 
 //first commit
 
