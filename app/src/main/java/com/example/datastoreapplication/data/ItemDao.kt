@@ -21,8 +21,8 @@ interface ItemDao {
 
 
  */
-@Query("DELETE FROM items WHERE id IN (:ids)")
-suspend fun deleteByIds(ids: List<Int>)
+@Query("DELETE FROM items WHERE name IN (:names)")
+suspend fun deleteByNames(names: List<String>)
     @Query("SELECT * from items WHERE name = :name")
     fun getItem(name: String): Flow<Item>
 

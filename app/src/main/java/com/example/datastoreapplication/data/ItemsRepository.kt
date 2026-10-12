@@ -19,11 +19,9 @@ interface ItemsRepository {
     /**
      * Delete item from the data source
      */
-    suspend fun deleteItem(item: Item)
 
-    /**
-     * Update item in the data source
-     */
+    suspend fun deleteItems(names: List<String>)
+
     suspend fun updateItem(item: Item)
 }
 
@@ -31,12 +29,8 @@ interface ItemsRepository {
 
 class OfflineItemsRepository(private val itemDao: ItemDao) : ItemsRepository {
     override fun getAllItemsStream(): Flow<List<Item>> = itemDao.getAllItems()
-
     override fun getItemStream(name: String): Flow<Item?> = itemDao.getItem(name)
-
     override suspend fun insertItem(item: Item) = itemDao.insert(item)
-
-    override suspend fun deleteItem(item: Item) = itemDao.delete(item)
-
+    override suspend fun deleteItems(names: List<String>) = itemDao.deleteByNames(names)
     override suspend fun updateItem(item: Item) = itemDao.update(item)
 }
